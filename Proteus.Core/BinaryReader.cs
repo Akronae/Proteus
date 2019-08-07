@@ -23,7 +23,9 @@ namespace Proteus.Core
             
             object value;
 
-            if (type == typeof(byte))
+            if (type == typeof(bool)) 
+                value = ReadBool();
+            else if (type == typeof(byte))
                 value = ReadByte();
             else if (type == typeof(int))
                 value = ReadNumber();
@@ -142,8 +144,10 @@ namespace Proteus.Core
                     Type itemType;
 
                     if (typeId == GenericTypesConsts.UndefinedType)
+                    {
                         itemType = listGenericType;
-                    else itemType = Serializer.GenericTypes.GetType(typeId);
+                    }
+                    else itemType = Serializer.GenericTypesProvider.GetType(typeId);
 
                     var item = Serializer.Deserialize(itemType, RemainingBuffer.ToArray(), out var consumed);
                     Index += consumed;

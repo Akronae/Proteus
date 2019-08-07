@@ -11,11 +11,11 @@ namespace Proteus.Core
         private readonly Dictionary<Type, Dictionary<int, MemberInfo>> _cachedPacketSerializableMembers =
             new Dictionary<Type, Dictionary<int, MemberInfo>>();
 
-        public readonly IGenericTypes GenericTypes;
+        public readonly IGenericTypesProvider GenericTypesProvider;
 
-        public Serializer (IGenericTypes genericTypes)
+        public Serializer (IGenericTypesProvider genericTypesProvider)
         {
-            GenericTypes = genericTypes;
+            GenericTypesProvider = genericTypesProvider;
         }
 
         public byte[] Serialize (object obj)
@@ -27,6 +27,11 @@ namespace Proteus.Core
         {
             var members = GetPacketSerializableMembers(objectType);
             var writer = new BinaryWriter(this);
+
+            if (members.Count == 0)
+            {
+                writer.Write(obj);
+            }
             
             foreach (var member in members)
             {
@@ -35,7 +40,7 @@ namespace Proteus.Core
                 if (value is Enum) value = (short) (int) value;
 
                 // If value is not primitive type.
-                if (writer.Write(value) is false)
+                if (writer.Write(value) == false)
                 {
                     var serializedObj = Serialize(value);
 
@@ -63,6 +68,11 @@ namespace Proteus.Core
             var instance = Activator.CreateInstance(type);
 
             var reader = new BinaryReader(data.ToList(), this);
+
+            if (members.Count == 0)
+            {
+                instance = reader.Read(type);
+            }
 
             foreach (var member in members)
             {

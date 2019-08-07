@@ -6,11 +6,11 @@ using Chresimos.Core;
 
 namespace Proteus.Core
 {
-    public class LoadedAssembliesGenericTypes : IGenericTypes
+    public class LoadedAssembliesGenericTypesProvider : IGenericTypesProvider
     {
         private static readonly Dictionary<int, Type> _genericTypes = new Dictionary<int, Type>();
 
-        public LoadedAssembliesGenericTypes ()
+        public LoadedAssembliesGenericTypesProvider ()
         {
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies()) RegisterAssembly(assembly);
         }
@@ -25,7 +25,7 @@ namespace Proteus.Core
         public Type GetType (int id)
         {
             if (!_genericTypes.ContainsKey(id))
-                LogUtils.Throw(new Exception($"{nameof(LoadedAssembliesGenericTypes)} has no type associated with generic type Id {id}"));
+                LogUtils.Throw(new Exception($"{nameof(LoadedAssembliesGenericTypesProvider)} has no type associated with generic type Id {id}"));
 
             return _genericTypes[id];
         }

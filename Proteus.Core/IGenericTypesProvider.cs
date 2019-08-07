@@ -2,7 +2,7 @@ using System;
 
 namespace Proteus.Core
 {
-    public interface IGenericTypes
+    public interface IGenericTypesProvider
     {
         int GetTypeId (Type type);
         Type GetType (int id);

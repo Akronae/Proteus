@@ -15,7 +15,7 @@ namespace Proteus.Core
 
         public bool Write (object value)
         {
-            if (value is null)
+            if (value == null)
             {
                 WriteBool(NullFieldFlag);
                 return true;
@@ -102,14 +102,19 @@ namespace Proteus.Core
         {
             WriteInt32(list.Count);
 
-            var listGenericType = genericType ?? list.GetType().GetGenericArguments().Single();
+            var listGenericType = genericType ?? list.GetType().GetGenericArguments().SingleOrDefault();
+            if (listGenericType == null)
+            {
+                throw LogUtils.Throw($"Cannot write {list} which is not of type List<>");
+            }
+            
             var useSerializer = listGenericType.IsSimpleType() is false;
 
             foreach (var obj in list)
                 if (useSerializer)
                 {
                     var objType = obj.GetType();
-                    var objTypeId = Serializer.GenericTypes.GetTypeId(objType);
+                    var objTypeId = Serializer.GenericTypesProvider.GetTypeId(objType);
 
                     if (objTypeId == GenericTypesConsts.UndefinedType) objType = listGenericType;
 
@@ -149,39 +154,30 @@ namespace Proteus.Core
 
         public void WriteNumber (int value)
         {
-            if (value < byte.MaxValue && value > byte.MinValue)
+            if (value <= byte.MaxValue && value >= byte.MinValue)
             {
                 WriteByte((byte) NumberType.Byte);
                 WriteByte((byte) value);
             }
-            else if (value < sbyte.MaxValue && value > sbyte.MinValue)
+            else if (value <= sbyte.MaxValue && value >= sbyte.MinValue)
             {
                 WriteByte((byte) NumberType.SByte);
                 WriteByte((byte) Convert.ToSByte(value));
             }
-            else if (value < ushort.MaxValue && value > ushort.MinValue)
+            else if (value <= ushort.MaxValue && value >= ushort.MinValue)
             {
                 WriteByte((byte) NumberType.UShort);
                 WriteShort((ushort) value);
             }
-            else if (value < short.MaxValue && value > short.MinValue)
+            else if (value <= short.MaxValue && value >= short.MinValue)
             {
                 WriteByte((byte) NumberType.Short);
                 WriteShort((short) value);
             }
-            else if (value > uint.MinValue)
-            {
-                WriteByte((byte) NumberType.Int32);
-                WriteInt32((uint) value);
-            }
-            else if (value < int.MaxValue && value > int.MinValue)
+            else
             {
                 WriteByte((byte) NumberType.Int32);
                 WriteInt32(value);
-            }
-            else
-            {
-                throw LogUtils.Throw(new Exception($"Cannot write number {value}"));
             }
         }
 

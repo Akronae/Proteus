@@ -44,8 +44,8 @@
         <Compile Include="BinaryReader.cs" />
         <Compile Include="BinarySerializer.cs" />
         <Compile Include="BinaryWriter.cs" />
-        <Compile Include="IGenericTypes.cs" />
-        <Compile Include="LoadedAssembliesGenericTypes.cs" />
+        <Compile Include="IGenericTypesProvider.cs" />
+        <Compile Include="LoadedAssembliesGenericTypesProvider.cs" />
         <Compile Include="NumberType.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="SerializableAsGenericAttribute.cs" />
