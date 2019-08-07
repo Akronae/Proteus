@@ -154,7 +154,7 @@ foreach (var person in deserialized)
 }
 ```
 
-Here `new LoadedAssembliesGenericTypesProvider()` given to the serialize scans all the loaded assembies for `SerializableAsGeneric` and store the types, but a custom generic type provider which inherits [IGenericTypesProvider](https://github.com/Akronae/Proteus/blob/master/Proteus.Core/IGenericTypesProvider.cs)can be used
+Here `new LoadedAssembliesGenericTypesProvider()` given to the serialize scans all the loaded assembies for `SerializableAsGeneric` and store the types, but a custom generic type provider which inherits [IGenericTypesProvider](https://github.com/Akronae/Proteus/blob/master/Proteus.Core/IGenericTypesProvider.cs) can be used
 
 **_Warning: This only works for List, but will be implemented for every object in future releases._**
 
