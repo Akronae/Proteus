@@ -152,7 +152,7 @@ foreach (var person in deserialized)
 }
 ```
 
-**_Warning: This only works for List, as it'd take too much place to encode a generic type ID for every member (at least 1 byte/member)._**
+**_Warning: This only works for List, but will be implemented for every object in future releases._**
 
 ## Data architecture
 Here are the supported native types:  
