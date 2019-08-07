@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proteus.Core", "Proteus.Core\Proteus.Core.csproj", "{54ED371E-208A-4EF4-894F-DB55B03F37CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54ED371E-208A-4EF4-894F-DB55B03F37CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54ED371E-208A-4EF4-894F-DB55B03F37CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54ED371E-208A-4EF4-894F-DB55B03F37CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54ED371E-208A-4EF4-894F-DB55B03F37CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
