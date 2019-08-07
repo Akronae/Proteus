@@ -1,3 +1,5 @@
+# Modern cross-platform serializer designed for simplicity and scalability
+
 ![Hello World](http://1.bp.blogspot.com/_dg0YrAzykYY/TQxf30endCI/AAAAAAAAAAw/wdk0ql7g1qo/s1600/p.jpeg)
 
 Proteus is a reflection-based serializer that I use for my projects.
