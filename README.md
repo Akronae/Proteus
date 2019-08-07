@@ -126,8 +126,8 @@ class Employee : Person
 var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
 var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400}, new Person{Age = 29, Name = "John"}};
 var serialized = serializer.Serialize(persons);
-Console.WriteLine(BitConverter.ToString(serialized));
 var deserialized = serializer.Deserialize<List<Person>>(serialized);
+
 foreach (var person in deserialized)
 {
     Console.WriteLine(person); // Prints: "21 Doe \n 29 John".
