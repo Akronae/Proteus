@@ -184,6 +184,6 @@ The first byte `01` means that the value is not null
 The second byte `02` means that the value has been encoded on `UShort`
 And the remaining `D4-FE` = -300
 
-Proteus is designed this way to be reliable, you don't have to worry about the space numbers could take and to save space as most of the time the space allocated to number is way bigger than the number really need, so the byte on which the value is encoded is largely compensated.
+Proteus is designed this way to be reliable, you don't have to worry about the space numbers could take and to save space as most of the time the space allocated to number is way bigger than the number really need, so the byte used to tell the value type is largely compensated.
 
 **_Summup: Always use either int or float as value type for number fields._**
