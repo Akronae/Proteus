@@ -1,5 +1,3 @@
-!nuget/*.nupkg
-
 # Created by https://www.gitignore.io/api/rider,csharp,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=rider,csharp,visualstudio,visualstudiocode
 
@@ -557,3 +555,5 @@ fabric.properties
 # BeatPulse healthcheck temp database
 
 # End of https://www.gitignore.io/api/rider,csharp,visualstudio,visualstudiocode
+
+!nuget/*.nupkg

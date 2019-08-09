@@ -15,11 +15,12 @@
 
     <!-- Automatic date versioned packaging -->
     <Target Name="NugetPackAutoVersioning" AfterTargets="Build">
-        <Exec Command="dotnet pack -p:PackageVersion=$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;)) --no-build --configuration $(Configuration) --output &quot;$(SolutionDir)nuget" />
+        <Exec Command="dotnet pack -p:PackageVersion=$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;)) --no-build --configuration $(Configuration) --output &quot;$(SolutionDir)nuget/lol.nupkg" />
     </Target>
     
     <!-- Third party libraries -->
     <ItemGroup>
+        
         <Reference Include="Chresimos.Core">
             <HintPath>..\..\Chresimos\Chresimos.Core\bin\Debug\Chresimos.Core.dll</HintPath>
             <SpecificVersion>false</SpecificVersion>
