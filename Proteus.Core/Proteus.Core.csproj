@@ -1,64 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Nuget information -->
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{54ED371E-208A-4EF4-894F-DB55B03F37CE}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Proteus.Core</RootNamespace>
-        <AssemblyName>Proteus.Core</AssemblyName>
-        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Proteus.Core</Title>
+        <Authors>Alexandre Daubricourt</Authors>
+        <Description>Modern serializer for .NET &amp; Unity.</Description>
+        <Copyright>Alexandre Daubricourt</Copyright>
+        <PackageProjectUrl>https://github.com/Akronae/Proteus</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/Akronae/Proteus/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl>https://camo.githubusercontent.com/2f6f73d61eee9880252f0b5605558031439b61b7/687474703a2f2f312e62702e626c6f6773706f742e636f6d2f5f6467305972417a796b59592f545178663330656e6443492f41414141414141414141772f77646b30716c376731716f2f73313630302f702e6a706567</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Akronae/Proteus</RepositoryUrl>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="../../Chresimos/Chresimos.Core/Chresimos.Core.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="BinaryReader.cs" />
-        <Compile Include="BinarySerializer.cs" />
-        <Compile Include="BinaryWriter.cs" />
-        <Compile Include="IGenericTypesProvider.cs" />
-        <Compile Include="LoadedAssembliesGenericTypesProvider.cs" />
-        <Compile Include="NumberType.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="SerializableAsGenericAttribute.cs" />
-        <Compile Include="SerializedMemberAttribute.cs" />
-        <Compile Include="Serializer.cs" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
+
+    <!-- Automatic date versioned packaging -->
+    <Target Name="NugetPackAutoVersioning" AfterTargets="Build">
+        <Exec Command="dotnet pack -p:PackageVersion=$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;)) --no-build --configuration $(Configuration) --output &quot;$(SolutionDir)nuget" />
     </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
+    
+    <!-- Third party libraries -->
+    <ItemGroup>
+        <Reference Include="Chresimos.Core">
+            <HintPath>..\..\Chresimos\Chresimos.Core\bin\Debug\Chresimos.Core.dll</HintPath>
+            <SpecificVersion>false</SpecificVersion>
+        </Reference>
+    </ItemGroup>
 
 </Project>
