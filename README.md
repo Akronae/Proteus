@@ -4,7 +4,7 @@
 
 Proteus is a reflection-based serializer that I use for my projects.
 
-# [Download the DLL](https://github.com/Akronae/Proteus/raw/master/Proteus.Core/bin/Debug/Proteus.Core.dll)
+# [Download the NuGet package](https://github.com/Akronae/Proteus/tree/master/nuget)
 
 # Documentation
 ## Basic serialization
