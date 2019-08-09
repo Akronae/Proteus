@@ -8,7 +8,6 @@
     <e p="C:\Users\Alex\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Proteus.-1445303663.00" t="ExcludeRecursive" />
     <e p="C:\Users\Alex\Prog\C#\Proteus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
-      <e p="nuget" t="IncludeRecursive" />
       <e p="Proteus.Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="BinaryReader.cs" t="Include" />

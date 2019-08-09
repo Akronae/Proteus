@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="329c7395-84f8-49dc-9c17-fd9b13a95856" name="Default Changelist" comment="No need for bins etc. as we no longer rely on DLLs.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding>
                 <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
                 <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
@@ -250,7 +248,7 @@
       <updated>1565105729347</updated>
       <workItem from="1565105730808" duration="791000" />
       <workItem from="1565180768072" duration="10104000" />
-      <workItem from="1565360352590" duration="8047000" />
+      <workItem from="1565360352590" duration="8322000" />
     </task>
     <task id="LOCAL-00001" summary="Moved from `Survixel.Serialization`.">
       <created>1565181977823</created>
@@ -294,11 +292,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565367983298</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="No need for bins etc. as we no longer rely on DLLs.">
+      <created>1565368571413</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565368571413</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18942000" />
+    <option name="totallyTimeSpent" value="19217000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -313,7 +318,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25519446" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25519446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -329,9 +334,9 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Unit Tests" order="12" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.32958034" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32958034" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.32958034" />
+      <window_info anchor="bottom" id="Build" order="15" visible="true" weight="0.32958034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -501,17 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
-            <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -564,12 +558,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.sln">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="207" selection-start-line="17" selection-start-column="207" selection-end-line="17" selection-end-column="207" />
           <folding>
             <element signature="e#246#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
+            <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
           </folding>
         </state>
       </provider>
