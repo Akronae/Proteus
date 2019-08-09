@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Alex\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Alex\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Alex\.Rider2019.1\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Alex\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Alex\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Proteus.-1445303663.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alex\Prog\C#\Proteus" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="nuget" t="IncludeRecursive" />
+      <e p="Proteus.Core" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BinaryReader.cs" t="Include" />
+        <e p="BinarySerializer.cs" t="Include" />
+        <e p="BinaryWriter.cs" t="Include" />
+        <e p="IGenericTypesProvider.cs" t="Include" />
+        <e p="LoadedAssembliesGenericTypesProvider.cs" t="Include" />
+        <e p="NumberType.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Proteus.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Proteus.Core.csproj" t="IncludeRecursive" />
+        <e p="SerializableAsGenericAttribute.cs" t="Include" />
+        <e p="SerializedMemberAttribute.cs" t="Include" />
+        <e p="Serializer.cs" t="Include" />
+      </e>
+      <e p="Proteus.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

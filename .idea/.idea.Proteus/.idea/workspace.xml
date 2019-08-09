@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="329c7395-84f8-49dc-9c17-fd9b13a95856" name="Default Changelist" comment="No need for bins etc. as we no longer rely on DLLs.">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/indexLayout.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <marker date="1565366974973" expanded="false" signature="6:133" ph="..." />
+                <marker date="1565366974973" expanded="true" signature="157:6849" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="215:6847" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="319:339" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="380:1422" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="435:492" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="1455:1576" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="1617:1687" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="1722:1876" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="1913:2068" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="2101:2253" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="2288:2441" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="2476:2631" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="2674:2810" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="2847:3034" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="3078:3151" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="3184:3311" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="3358:4707" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="3702:4256" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="3870:3966" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="4277:4671" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="4395:4595" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="4772:5383" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="5222:5341" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="5417:5527" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="5582:6176" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="5618:6166" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="6217:6841" ph="{...}" />
+                <marker date="1565366974973" expanded="true" signature="6302:6831" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+              <folding>
+                <element signature="e#246#251#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
+                <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+              <folding>
+                <marker date="1565362610833" expanded="false" signature="6:113" ph="..." />
+                <marker date="1565362610833" expanded="true" signature="137:1696" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="217:1694" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="378:504" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="546:725" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="763:1017" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="1076:1688" ph="{...}" />
+                <marker date="1565362610833" expanded="true" signature="1140:1678" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>AsGeneric</find>
+      <find>bool</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/SerializableAsGenericAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/Serializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DDACB264-42C8-4CAE-A0EF-9D4D116F80D6/e3/119db8ae/Single.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/Serializer.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/NumberType.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Test/Class1.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Test/ThisIsAtTest.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/Class1.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" />
+        <option value="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Proteus" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Proteus" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Proteus.Core" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nuget" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish runtime="Portable" target_folder="$PROJECT_DIR$/Proteus.Core/publish" target_framework="netstandard2.0" uuid_high="-3540947953343576201" uuid_low="-5008043333266283031" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="329c7395-84f8-49dc-9c17-fd9b13a95856" name="Default Changelist" comment="" />
+      <created>1565105729347</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565105729347</updated>
+      <workItem from="1565105730808" duration="791000" />
+      <workItem from="1565180768072" duration="10104000" />
+      <workItem from="1565360352590" duration="7610000" />
+    </task>
+    <task id="LOCAL-00001" summary="Moved from `Survixel.Serialization`.">
+      <created>1565181977823</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565181977823</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Minor tweaks.">
+      <created>1565192225618</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565192225618</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Switched from .NET Framework 3.5 to .NET Standard 2.0.&#10;Now relies on Nuget packages.">
+      <created>1565367165977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565367165977</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Switched from .NET Framework 3.5 to .NET Standard 2.0.&#10;Now relies on Nuget packages.">
+      <created>1565367429961</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565367429961</updated>
+    </task>
+    <task id="LOCAL-00005" summary="No need for bins etc. as we no longer rely on DLLs.">
+      <created>1565367551530</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565367551530</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18505000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25519446" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32958034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32958034" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32958034" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32958034" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="15" visible="true" weight="0.32958034" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Moved from `Survixel.Serialization`." />
+    <MESSAGE value="Minor tweaks." />
+    <MESSAGE value="Switched from .NET Framework 3.5 to .NET Standard 2.0.&#10;Now relies on Nuget packages." />
+    <MESSAGE value="No need for bins etc. as we no longer rely on DLLs." />
+    <option name="LAST_COMMIT_MESSAGE" value="No need for bins etc. as we no longer rely on DLLs." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DDACB264-42C8-4CAE-A0EF-9D4D116F80D6/e3/119db8ae/Single.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
+          <folding>
+            <marker date="1565362610798" expanded="false" signature="6:133" ph="..." />
+            <marker date="1565362610798" expanded="true" signature="157:6724" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="215:6722" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="310:330" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="372:1601" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="413:512" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="604:1564" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="1645:1696" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="1748:1815" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="1861:1940" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="1987:2066" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2110:2189" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2234:2313" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2359:2438" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2486:2625" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2694:3657" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="2887:3005" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="3165:3558" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="3579:3647" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="3719:4161" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4219:4275" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4318:4382" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4427:5372" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4503:4623" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4696:4834" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="4909:5034" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5107:5230" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5247:5362" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5419:6716" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5560:5655" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5724:6339" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="5824:6019" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="6112:6325" ph="{...}" />
+            <marker date="1565362610798" expanded="true" signature="6446:6626" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1565362610819" expanded="true" signature="37:263" ph="{...}" />
+            <marker date="1565362610819" expanded="true" signature="82:160" ph="{...}" />
+            <marker date="1565362610819" expanded="true" signature="204:261" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <marker date="1565362610785" expanded="false" signature="6:52" ph="..." />
+            <marker date="1565362610785" expanded="true" signature="76:732" ph="{...}" />
+            <marker date="1565362610785" expanded="true" signature="121:730" ph="{...}" />
+            <marker date="1565362610785" expanded="true" signature="563:649" ph="{...}" />
+            <marker date="1565362610785" expanded="true" signature="691:724" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/Serializer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="63" lean-forward="true" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <marker date="1565362610872" expanded="true" signature="6:113" ph="..." />
+            <marker date="1565362610872" expanded="true" signature="137:5742" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="167:5740" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="485:562" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="608:678" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="741:1690" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="905:968" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="1025:1635" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="1262:1621" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="1390:1528" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="1784:2983" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="1847:2009" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="2245:2319" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="2364:2900" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="2546:2829" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="3043:3114" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="3185:3277" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="3325:3393" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="3492:4827" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="3942:4716" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="4122:4702" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="4198:4684" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="4340:4578" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="4925:5734" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="5063:5356" ph="{...}" />
+            <marker date="1565362610872" expanded="true" signature="5409:5696" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Test/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Test/ThisIsAtTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/Class1.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core.OLD/Proteus.Core.OLD.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="41" column="16" selection-start-line="39" selection-start-column="4" selection-end-line="41" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <marker date="1565362610833" expanded="false" signature="6:113" ph="..." />
+            <marker date="1565362610833" expanded="true" signature="137:1696" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="217:1694" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="378:504" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="546:725" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="763:1017" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="1076:1688" ph="{...}" />
+            <marker date="1565362610833" expanded="true" signature="1140:1678" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
+            <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <marker date="1565366974973" expanded="false" signature="6:133" ph="..." />
+            <marker date="1565366974973" expanded="true" signature="157:6849" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="215:6847" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="319:339" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="380:1422" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="435:492" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="1455:1576" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="1617:1687" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="1722:1876" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="1913:2068" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="2101:2253" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="2288:2441" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="2476:2631" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="2674:2810" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="2847:3034" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="3078:3151" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="3184:3311" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="3358:4707" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="3702:4256" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="3870:3966" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="4277:4671" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="4395:4595" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="4772:5383" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="5222:5341" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="5417:5527" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="5582:6176" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="5618:6166" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="6217:6841" ph="{...}" />
+            <marker date="1565366974973" expanded="true" signature="6302:6831" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="e#246#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
