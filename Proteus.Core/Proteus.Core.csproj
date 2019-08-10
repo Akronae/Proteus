@@ -20,11 +20,7 @@
     
     <!-- Third party libraries -->
     <ItemGroup>
-        
-        <Reference Include="Chresimos.Core">
-            <HintPath>..\..\Chresimos\Chresimos.Core\bin\Debug\Chresimos.Core.dll</HintPath>
-            <SpecificVersion>false</SpecificVersion>
-        </Reference>
+        <PackageReference Include="Chresimos.Core" Version="2019.8.10.110506" />
     </ItemGroup>
-
+    
 </Project>
