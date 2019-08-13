@@ -173,8 +173,8 @@ Here are the supported native types:
 * List<>
 * Dictionary<,>
 
-Nested class are serialized as well.  
-You don't need to worry about the space that a number take, Proteus will figure out automatically how to encode it.  
+Nested classes are serialized as well.  
+You don't need to worry about the space that a number takes, Proteus will figure out automatically how to encode it.  
 For instance:
 ```cs
 serializer.Serialize(1); // 01-FF-00-00-01
