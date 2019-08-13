@@ -16,7 +16,7 @@ namespace Proteus.Core
 
         public object Read (Type type)
         {
-            if (ReadBool() == NullFieldFlag)
+            if (ReadBool() == MemberIsNullFlag)
             {
                 return null;
             }
@@ -131,40 +131,15 @@ namespace Proteus.Core
 
         public IList ReadList (Type listType)
         {
-            var count = ReadInt32();
+            var count = ReadNumber();
             var listGenericType = listType.GetGenericArguments().Single();
             var list = ListUtils.CreateListOfType(listGenericType);
 
-            var useSerializer = listGenericType.IsSimpleType() is false;
-
             for (var i = 0; i < count; i++)
-                if (useSerializer)
-                {
-                    var typeId = ReadShort();
-                    Type itemType;
-
-                    if (typeId == GenericTypesConsts.UndefinedTypeId)
-                    {
-                        itemType = listGenericType;
-                    }
-                    else itemType = Serializer.GenericTypesProvider.GetType(typeId);
-
-                    var item = Serializer.Deserialize(itemType, RemainingBuffer.ToArray(), out var consumed);
-                    Index += consumed;
-
-                    list.Add(item);
-                }
-                else
-                {
-                    var value = Read(listGenericType);
-                    if (value is CannotRead)
-                    {
-                        LogUtils.Throw(
-                            new Exception($"Tried to add to list but can't read value of type {listGenericType}"));
-                    }
-                    
-                    list.Add(value);
-                }
+            {
+                list.Add(Serializer.Deserialize(listGenericType, RemainingBuffer.ToArray(), out var consumed));
+                Index += consumed;
+            }
 
             return list;
         }

@@ -29,9 +29,12 @@ namespace Proteus.Core
 
         public byte[] Serialize (object obj, Type objectType)
         {
-            var members = GetPacketSerializableMembers(objectType);
+            var members = GetObjectSerializableMembers(objectType);
             var writer = new BinaryWriter(this);
 
+            var objGenericTypeId = GenericTypesProvider.GetTypeId(objectType);
+            writer.WriteNumber(objGenericTypeId);
+            
             if (members.Count == 0)
             {
                 writer.Write(obj);
@@ -45,16 +48,16 @@ namespace Proteus.Core
 
                 // If value is not primitive type.
                 if (writer.Write(value) == false)
-                {
+                {   
                     var serializedObj = Serialize(value);
 
                     if (serializedObj.Length == 0)
                     {
-                        throw LogUtils.Throw($"Can't write type {value.GetType().FullName}");
+                        throw LogUtils.Throw($"Cannot write type {value.GetType().FullName}");
                     }
                     
                     writer.WriteBytes(serializedObj);
-                }
+                }    
             }
 
             return writer.Buffer.ToArray();
@@ -68,14 +71,27 @@ namespace Proteus.Core
                     $"{type} must have parameterless constructor in oder to be deserialized.");
             }
             
-            var members = GetPacketSerializableMembers(type);
-            var instance = Activator.CreateInstance(type);
-
             var reader = new BinaryReader(data.ToList(), this);
-
+            
+            var objGenericTypeId = reader.ReadNumber();
+            if (objGenericTypeId != GenericTypesConsts.UndefinedTypeId)
+            {
+                type = GenericTypesProvider.GetType(objGenericTypeId);
+            }
+            
+            var members = GetObjectSerializableMembers(type);
+            var instance = Activator.CreateInstance(type);
+            
             if (members.Count == 0)
             {
-                instance = reader.Read(type);
+                // As there is no serializable member in this type, it is either an empty class, or a native value.
+                // If we can read the primitive value we assign it to the instance else we leave it as it is,
+                // it's to say an empty class instance.
+                var instanceValue = reader.Read(type);
+                if (!(instanceValue is BinarySerializer.CannotRead))
+                {
+                    instance = instanceValue;
+                }
             }
 
             foreach (var member in members)
@@ -84,11 +100,14 @@ namespace Proteus.Core
                 var value = reader.Read(memType);
 
                 if (value is BinarySerializer.CannotRead)
-                {
+                {   
                     value = Deserialize(memType, reader.RemainingBuffer.ToArray(), out var c);
                     reader.Index += c;
 
-                    if (value is null) throw LogUtils.Throw(new Exception($"Can't read type {type.FullName}"));
+                    if (value == null)
+                    {
+                        throw LogUtils.Throw(new Exception($"Cannot read member of type {memType} of {type}"));
+                    }
                 }
 
                 member.Value.SetValue(instance, value);
@@ -114,7 +133,7 @@ namespace Proteus.Core
             return Deserialize<T>(data, out _);
         }
         
-        public Dictionary<int, MemberInfo> GetPacketSerializableMembers (Type packetType)
+        public Dictionary<int, MemberInfo> GetObjectSerializableMembers (Type packetType)
         {
             var isCached = _cachedPacketSerializableMembers.ContainsKey(packetType);
             if (isCached) return _cachedPacketSerializableMembers[packetType];

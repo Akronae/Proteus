@@ -5,7 +5,7 @@ namespace Proteus.Core
 {
     public abstract class BinarySerializer
     {
-        public const bool NullFieldFlag = false;
+        public const bool MemberIsNullFlag = true;
         public static readonly CannotRead CannotReadValue = new CannotRead();
 
         public readonly List<byte> Buffer;

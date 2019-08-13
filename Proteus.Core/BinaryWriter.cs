@@ -17,11 +17,11 @@ namespace Proteus.Core
         {
             if (value == null)
             {
-                WriteBool(NullFieldFlag);
+                WriteBool(MemberIsNullFlag);
                 return true;
             }
             
-            WriteBool(!NullFieldFlag);
+            WriteBool(!MemberIsNullFlag);
             
             switch (value)
             {
@@ -98,34 +98,30 @@ namespace Proteus.Core
             Buffer.AddRange(Encoding.UTF8.GetBytes(value));
         }
 
-        public void WriteList (IList list, Type genericType = null)
+        public void WriteList (IList list)
         {
-            WriteInt32(list.Count);
-
-            var listGenericType = genericType ?? list.GetType().GetGenericArguments().SingleOrDefault();
-            if (listGenericType == null)
+            var listElementType = list.GetListElementTypeOrDefault();
+            if (listElementType == null)
             {
                 throw LogUtils.Throw($"Cannot write {list} which is not of type List<>");
             }
-            
-            var useSerializer = listGenericType.IsSimpleType() is false;
+
+            WriteNumber(list.Count);
 
             foreach (var obj in list)
-                if (useSerializer)
+            {
+                var objSerializationType = obj.GetType();
+                var objGenericTypeId = Serializer.GenericTypesProvider.GetTypeId(objSerializationType);
+
+                // If the type of this element has a unique ID, we can serialize it as it is because the type will later
+                // be retrieved during the deserialization; If not we stick to the list generic element type.
+                if (objGenericTypeId == GenericTypesConsts.UndefinedTypeId)
                 {
-                    var objType = obj.GetType();
-                    var objTypeId = Serializer.GenericTypesProvider.GetTypeId(objType);
-
-                    if (objTypeId == GenericTypesConsts.UndefinedTypeId) objType = listGenericType;
-
-                    WriteShort((short) objTypeId);
-
-                    WriteBytes(Serializer.Serialize(obj, objType));
+                    objSerializationType = listElementType;
                 }
-                else
-                {
-                    Write(obj);
-                }
+                
+                WriteBytes(Serializer.Serialize(obj, objSerializationType));
+            }
         }
 
         public void WriteDictionary (IDictionary dictionary)
@@ -136,10 +132,8 @@ namespace Proteus.Core
             dictionary.Keys.CopyTo(keys, 0);
             dictionary.Values.CopyTo(values, 0);
 
-            var dictionaryGenerics = dictionary.GetType().GetGenericArguments();
-
-            WriteList(keys.ToList(), dictionaryGenerics[0]);
-            WriteList(values.ToList(), dictionaryGenerics[1]);
+            WriteList(keys.ToList());
+            WriteList(values.ToList());
         }
 
         public void WriteBytes (IEnumerable<byte> bytes)
