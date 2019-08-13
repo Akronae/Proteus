@@ -143,7 +143,7 @@ namespace Proteus.Core
                     var typeId = ReadShort();
                     Type itemType;
 
-                    if (typeId == GenericTypesConsts.UndefinedType)
+                    if (typeId == GenericTypesConsts.UndefinedTypeId)
                     {
                         itemType = listGenericType;
                     }

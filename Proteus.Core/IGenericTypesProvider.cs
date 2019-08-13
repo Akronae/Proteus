@@ -10,6 +10,6 @@ namespace Proteus.Core
 
     public static class GenericTypesConsts
     {
-        public const int UndefinedType = -1;
+        public const int UndefinedTypeId = -1;
     }
 }

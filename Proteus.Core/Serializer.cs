@@ -13,8 +13,12 @@ namespace Proteus.Core
 
         public readonly IGenericTypesProvider GenericTypesProvider;
 
-        public Serializer (IGenericTypesProvider genericTypesProvider)
+        public Serializer (IGenericTypesProvider genericTypesProvider = null)
         {
+            if (genericTypesProvider == null)
+            {
+                genericTypesProvider = new VoidGenericTypesProvider();
+            }
             GenericTypesProvider = genericTypesProvider;
         }
 

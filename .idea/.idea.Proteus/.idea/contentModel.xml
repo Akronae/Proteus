@@ -27,6 +27,7 @@
         <e p="SerializableAsGenericAttribute.cs" t="Include" />
         <e p="SerializedMemberAttribute.cs" t="Include" />
         <e p="Serializer.cs" t="Include" />
+        <e p="VoidGenericTypesProvider.cs" t="Include" />
       </e>
       <e p="Proteus.sln" t="IncludeFlat" />
     </e>

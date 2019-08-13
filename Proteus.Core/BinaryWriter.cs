@@ -116,7 +116,7 @@ namespace Proteus.Core
                     var objType = obj.GetType();
                     var objTypeId = Serializer.GenericTypesProvider.GetTypeId(objType);
 
-                    if (objTypeId == GenericTypesConsts.UndefinedType) objType = listGenericType;
+                    if (objTypeId == GenericTypesConsts.UndefinedTypeId) objType = listGenericType;
 
                     WriteShort((short) objTypeId);
 

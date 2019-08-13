@@ -19,13 +19,16 @@ namespace Proteus.Core
         {
             var p = _genericTypes.SingleOrDefault(pair => pair.Value == type);
 
-            return p.Value is null ? GenericTypesConsts.UndefinedType : p.Key;
+            return p.Value is null ? GenericTypesConsts.UndefinedTypeId : p.Key;
         }
 
         public Type GetType (int id)
         {
             if (!_genericTypes.ContainsKey(id))
-                LogUtils.Throw(new Exception($"{nameof(LoadedAssembliesGenericTypesProvider)} has no type associated with generic type Id {id}"));
+            {
+                throw LogUtils.Throw(
+                    $"{nameof(LoadedAssembliesGenericTypesProvider)} has no type associated with generic type Id {id}");
+            }
 
             return _genericTypes[id];
         }
@@ -40,8 +43,10 @@ namespace Proteus.Core
                 if (attr is null) continue;
 
                 if (_genericTypes.ContainsKey(attr.GenericTypeId))
-                    throw new Exception(
+                {
+                    throw LogUtils.Throw(
                         $"{type} and {_genericTypes[attr.GenericTypeId]} have the same {nameof(attr.GenericTypeId)}");
+                }
 
                 _genericTypes.Add(attr.GenericTypeId, type);
             }
