@@ -9,8 +9,7 @@ Proteus is a reflection-based serializer that I use for my projects.
 # Documentation
 ## Basic serialization
 ```cs
-// Used for serializing any object, LoadedAssembliesGenericTypesProvider will be explained later.
-var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
+var serializer = new Serializer();
 
 // Let's say we have this class:
 class Person
@@ -89,7 +88,7 @@ class Vector2
     }
 }
 
-var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
+var serializer = new Serializer();
 var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500, DeskLocation = new Vector2(50,12)};
 var serialized = serializer.Serialize(person);
 var deserialized = serializer.Deserialize<Employee>(serialized);
@@ -123,7 +122,7 @@ class Employee : Person
 }
 
 // We want to serialize then deserialize a list of Person
-var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
+var serializer = new Serializer();
 var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400}, new Person{Age = 29, Name = "John"}};
 var serialized = serializer.Serialize(persons);
 var deserialized = serializer.Deserialize<List<Person>>(serialized);
@@ -134,6 +133,9 @@ foreach (var person in deserialized)
 }
 
 // Now, if we want to be able to serialize a List of several inherited classes, we could do so:
+
+// `LoadedAssembliesGenericTypesProvider` will scans all the assemblies and tell the serializer which each Type generic ID.
+var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
 
 // We have to give a unique ID to the class Employee (here 10) with the SerializableAsGeneric attribute.
 [SerializableAsGeneric(10)]
@@ -156,7 +158,8 @@ foreach (var person in deserialized)
 
 Here `new LoadedAssembliesGenericTypesProvider()` given to the serializer scans all the loaded assemblies for `SerializableAsGeneric` and stores the types, but a custom generic type provider which inherits [IGenericTypesProvider](https://github.com/Akronae/Proteus/blob/master/Proteus.Core/IGenericTypesProvider.cs) can be used instead.
 
-**_Warning: This only works for List, but will be implemented for every object in future releases._**
+**This works everywhere (not only for `List<>`) as long as the class deserialized has a `SerializableAsGeneric` attribute for 
+the serializer to retrieve the class structure during deserialization.**
 
 ## Data architecture
 Here are the supported native types:  
@@ -170,22 +173,20 @@ Here are the supported native types:
 * List<>
 * Dictionary<,>
 
-Nested class are serialized as well.  
-You don't need to worry about the space that a number take, Proteus will figure out automatically how to encode it.  
+Nested classes are serialized as well.  
+You don't need to worry about the space that a number takes, Proteus will figure out automatically how to encode it.  
 For instance:
 ```cs
-serializer.Serialize(1); // 01-00-01
+serializer.Serialize(1); // 01-FF-00-00-01
 ```
-The first byte `01` is a flag set on every member, it tells weather or not the value is null.  
-The second byte `00` is a flag that tells on which type the number is encoded, here `00 == Byte` (see [NumberType.cs](https://github.com/Akronae/Proteus/blob/master/Proteus.Core/NumberType.cs))  
-And the remaining byte is the value, 1.  
-```cs
-serializer.Serialize(-300); // 01-02-D4-FE
-```
-The first byte `01` means that the value is not null  
-The second byte `02` means that the value has been encoded on `UShort`
-And the remaining `D4-FE` = -300
+The first byte `01` means that the number following is encoding as `SByte` see [NumberType.cs](https://github.com/Akronae/Proteus/blob/master/Proteus.Core/NumberType.cs)).  
+The second byte `FF = -1.` is the generic type ID of the following serialized object, 
+here there is none (`-1 = unedefined generic type`).
+The third byte `00` is a flag set on every member, it tells weather or not the value is null,
+`00 = value is not null`, `01 = value is null`.  
+the fourth byte `00` means the the number is encoded as a `Byte`.
+The fifth byte `01 = 1.`.
 
-Proteus is designed this way to be reliable, you don't have to worry about the space numbers could take and to save space as most of the time the space allocated to number is way bigger than the number really need, so the byte used to tell the value type is largely compensated.
+Proteus is designed this way to be reliable, you don't have to worry about the space numbers could take and to save space as most of the time the space allocated to numbers is way bigger than the numbers really need, so the byte used to tell the number encoding is largely compensated.
 
 **_Summup: Always use either int or float as value type for number fields._**
