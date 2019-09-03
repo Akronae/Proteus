@@ -20,7 +20,7 @@
     
     <!-- Third party libraries -->
     <ItemGroup>
-        <PackageReference Include="Chresimos.Core" Version="2019.8.13.184520" />
+        <PackageReference Include="Chresimos.Core" Version="2019.8.16.115000" />
     </ItemGroup>
     
 </Project>

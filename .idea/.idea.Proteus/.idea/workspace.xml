@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="329c7395-84f8-49dc-9c17-fd9b13a95856" name="Default Changelist" comment="Third libraries are now NuGet packages instead of DLLs.">
-      <change afterPath="$PROJECT_DIR$/Proteus.Core/VoidGenericTypesProvider.cs" afterDir="false" />
+    <list default="true" id="329c7395-84f8-49dc-9c17-fd9b13a95856" name="Default Changelist" comment="Generics are now supported everywhere and no more for `List&lt;&gt;` only.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proteus.Core/Serializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Proteus.Core/Serializer.cs" afterDir="false" />
     </list>
@@ -32,86 +28,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Proteus.Core/Serializer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding>
-                <marker date="1565705110352" expanded="true" signature="6:113" ph="..." />
-                <marker date="1565705110352" expanded="true" signature="137:5894" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="167:5892" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="492:714" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="548:647" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="760:830" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="893:1842" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1057:1120" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1177:1787" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1414:1773" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1542:1680" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1936:3135" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="1999:2161" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="2397:2471" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="2516:3052" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="2698:2981" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="3195:3266" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="3337:3429" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="3477:3545" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="3644:4979" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="4094:4868" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="4274:4854" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="4350:4836" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="4492:4730" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="5077:5886" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="5215:5508" ph="{...}" />
-                <marker date="1565705110352" expanded="true" signature="5561:5848" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-              <folding>
-                <marker date="1565705110326" expanded="false" signature="6:113" ph="..." />
-                <marker date="1565705110326" expanded="true" signature="137:1775" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="217:1773" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="378:504" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="546:727" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="765:1059" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="823:1010" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="1118:1767" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="1182:1757" ph="{...}" />
-                <marker date="1565705110326" expanded="true" signature="1484:1681" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-              <folding>
-                <marker date="1565705110340" expanded="true" signature="37:265" ph="{...}" />
-                <marker date="1565705110340" expanded="true" signature="82:160" ph="{...}" />
-                <marker date="1565705110340" expanded="true" signature="204:263" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>AsGeneric</find>
       <find>bool</find>
+      <find>not set</find>
+      <find>Index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,6 +45,8 @@
     <setting file="file://$PROJECT_DIR$/Proteus.Core/SerializableAsGenericAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Proteus.Core/VoidGenericTypesProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Proteus.Core/Serializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30A4EDEE-069C-47E1-A2BF-7A270DFB6F0C/99/733eb345/TypeUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///C# Console" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DDACB264-42C8-4CAE-A0EF-9D4D116F80D6/e3/119db8ae/Single.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -133,18 +59,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Proteus.Core/NumberType.cs" />
-        <option value="$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" />
         <option value="$PROJECT_DIR$/Proteus.Test/Class1.cs" />
         <option value="$PROJECT_DIR$/Proteus.Test/ThisIsAtTest.cs" />
         <option value="$PROJECT_DIR$/Proteus.Core/Class1.cs" />
-        <option value="$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" />
         <option value="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/contentModel.xml" />
         <option value="$PROJECT_DIR$/.idea/.idea.Proteus/.idea/indexLayout.xml" />
         <option value="$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj" />
         <option value="$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs" />
         <option value="$PROJECT_DIR$/Proteus.Core/IGenericTypesProvider.cs" />
         <option value="$PROJECT_DIR$/Proteus.Core/VoidGenericTypesProvider.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/BinaryReader.cs" />
         <option value="$PROJECT_DIR$/Proteus.Core/Serializer.cs" />
+        <option value="$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs" />
       </list>
     </option>
   </component>
@@ -155,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -166,8 +93,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -249,7 +176,8 @@
       <workItem from="1565428748764" duration="993000" />
       <workItem from="1565700350123" duration="31000" />
       <workItem from="1565700680489" duration="33000" />
-      <workItem from="1565704742388" duration="368000" />
+      <workItem from="1565704742388" duration="12267000" />
+      <workItem from="1565946776159" duration="2396000" />
     </task>
     <task id="LOCAL-00001" summary="Moved from `Survixel.Serialization`.">
       <created>1565181977823</created>
@@ -314,11 +242,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565429096008</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Serializer type provider argument is optional and if null is set to&#10;an instance of `VoidGenericTypesProvider` which indeed provides no type.&#10;&#10;&#10;(lol)">
+      <created>1565705286204</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565705286204</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Generics are now supported everywhere and no more for `List&lt;&gt;` only.">
+      <created>1565716371324</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565716371324</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20923000" />
+    <option name="totallyTimeSpent" value="35218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -330,20 +272,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26584977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32958034" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32958034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32690355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32958034" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.328934" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -351,7 +292,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32958034" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" order="15" visible="true" weight="0.32958034" />
+      <window_info active="true" anchor="bottom" id="Build" order="15" visible="true" weight="0.328934" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -372,34 +313,25 @@
     <MESSAGE value="No need for bins etc. as we no longer rely on DLLs." />
     <MESSAGE value="Config." />
     <MESSAGE value="Third libraries are now NuGet packages instead of DLLs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Third libraries are now NuGet packages instead of DLLs." />
+    <MESSAGE value="Serializer type provider argument is optional and if null is set to&#10;an instance of `VoidGenericTypesProvider` which indeed provides no type.&#10;&#10;&#10;(lol)" />
+    <MESSAGE value="Generics are now supported everywhere and no more for `List&lt;&gt;` only." />
+    <option name="LAST_COMMIT_MESSAGE" value="Generics are now supported everywhere and no more for `List&lt;&gt;` only." />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>memt</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DDACB264-42C8-4CAE-A0EF-9D4D116F80D6/e3/119db8ae/Single.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding>
-            <marker date="1565362610785" expanded="false" signature="6:52" ph="..." />
-            <marker date="1565362610785" expanded="true" signature="76:732" ph="{...}" />
-            <marker date="1565362610785" expanded="true" signature="121:730" ph="{...}" />
-            <marker date="1565362610785" expanded="true" signature="563:649" ph="{...}" />
-            <marker date="1565362610785" expanded="true" signature="691:724" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -424,24 +356,6 @@
     <entry file="file://$PROJECT_DIR$/Proteus.sln">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
-            <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3008">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proteus.Core/Proteus.Core.csproj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -464,9 +378,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/VoidGenericTypesProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <marker date="1565705042485" expanded="true" signature="6:35" ph="..." />
+            <marker date="1565705042485" expanded="true" signature="59:483" ph="{...}" />
+            <marker date="1565705042485" expanded="true" signature="127:481" ph="{...}" />
+            <marker date="1565705042485" expanded="true" signature="174:249" ph="{...}" />
+            <marker date="1565705042485" expanded="true" signature="287:475" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proteus.Core/LoadedAssembliesGenericTypesProvider.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="195">
           <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
           <folding>
             <marker date="1565705110326" expanded="false" signature="6:113" ph="..." />
@@ -483,52 +411,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proteus.Core/VoidGenericTypesProvider.cs">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30A4EDEE-069C-47E1-A2BF-7A270DFB6F0C/99/733eb345/TypeUtils.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="45">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinarySerializer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
-            <marker date="1565705042485" expanded="true" signature="6:35" ph="..." />
-            <marker date="1565705042485" expanded="true" signature="59:483" ph="{...}" />
-            <marker date="1565705042485" expanded="true" signature="127:481" ph="{...}" />
-            <marker date="1565705042485" expanded="true" signature="174:249" ph="{...}" />
-            <marker date="1565705042485" expanded="true" signature="287:475" ph="{...}" />
+            <marker date="1565706653202" expanded="false" signature="6:52" ph="..." />
+            <marker date="1565706653202" expanded="true" signature="76:734" ph="{...}" />
+            <marker date="1565706653202" expanded="true" signature="121:732" ph="{...}" />
+            <marker date="1565706653202" expanded="true" signature="565:651" ph="{...}" />
+            <marker date="1565706653202" expanded="true" signature="693:726" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryReader.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <marker date="1565714064195" expanded="false" signature="6:133" ph="..." />
+            <marker date="1565714064195" expanded="true" signature="215:5948" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="319:339" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="380:1425" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="438:495" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="1458:1579" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="1620:1690" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="1725:1879" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="1916:2071" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="2104:2256" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="2291:2444" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="2479:2634" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="2677:2813" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="2850:3037" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="3081:3154" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="3187:3314" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="3361:3808" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="3597:3772" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="3873:4484" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="4323:4442" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="4518:4628" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="4683:5277" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="4719:5267" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="5318:5942" ph="{...}" />
+            <marker date="1565714064195" expanded="true" signature="5403:5932" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/NumberType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1565362610840" expanded="true" signature="22:269" ph="{...}" />
+            <marker date="1565362610840" expanded="true" signature="58:267" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proteus.Core/Serializer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="217">
+          <caret line="104" column="49" lean-forward="true" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
           <folding>
-            <marker date="1565705110352" expanded="true" signature="6:113" ph="..." />
-            <marker date="1565705110352" expanded="true" signature="137:5894" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="167:5892" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="492:714" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="548:647" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="760:830" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="893:1842" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1057:1120" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1177:1787" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1414:1773" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1542:1680" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1936:3135" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="1999:2161" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="2397:2471" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="2516:3052" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="2698:2981" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="3195:3266" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="3337:3429" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="3477:3545" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="3644:4979" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="4094:4868" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="4274:4854" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="4350:4836" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="4492:4730" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="5077:5886" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="5215:5508" ph="{...}" />
-            <marker date="1565705110352" expanded="true" signature="5561:5848" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="6:113" ph="..." />
+            <marker date="1565947121756" expanded="true" signature="137:6947" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="167:6945" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="492:714" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="548:647" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="760:830" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="893:1992" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="1199:1262" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="1319:1937" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="1556:1919" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="1687:1826" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="2086:4188" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="2301:2400" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="2548:3064" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="2579:2844" ph="/* As there is no serializable member in this type, it is either an empty class, or a native value. ... */" />
+            <marker date="1565947121756" expanded="true" signature="2968:3050" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="3099:3438" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="3170:3348" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="3483:4105" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="3665:4034" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="3860:4016" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="4248:4319" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="4390:4482" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="4530:4598" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="4697:6032" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="5147:5921" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="5327:5907" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="5403:5889" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="5545:5783" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="6130:6939" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="6268:6561" ph="{...}" />
+            <marker date="1565947121756" expanded="true" signature="6614:6901" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proteus.Core/BinaryWriter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="141" column="9" lean-forward="true" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+          <folding>
+            <marker date="1565949051439" expanded="false" signature="6:133" ph="..." />
+            <marker date="1565949051439" expanded="true" signature="157:6724" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="215:6722" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="310:330" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="372:1607" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="413:515" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="610:1570" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="1651:1702" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="1754:1821" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="1867:1946" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="1993:2072" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2116:2195" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2240:2319" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2365:2444" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2492:2631" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2675:3689" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2796:2914" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="2991:3679" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="3185:3399" ph="/* If the type of this element has a unique ID, we can serialize it as it is because the type will later ... */" />
+            <marker date="1565949051439" expanded="true" signature="3475:3571" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="3751:4161" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4219:4275" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4318:4382" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4427:5372" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4503:4623" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4696:4834" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="4909:5034" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5107:5230" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5247:5362" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5419:6716" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5560:5655" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5724:6339" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="5824:6019" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="6112:6325" ph="{...}" />
+            <marker date="1565949051439" expanded="true" signature="6446:6626" ph="{...}" />
           </folding>
         </state>
       </provider>

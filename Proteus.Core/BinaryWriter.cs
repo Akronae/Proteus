@@ -126,14 +126,16 @@ namespace Proteus.Core
 
         public void WriteDictionary (IDictionary dictionary)
         {
-            var keys = new object[dictionary.Keys.Count];
-            var values = new object[dictionary.Values.Count];
+            var dictionaryGenerics = dictionary.GetType().GetGenericArguments();
 
-            dictionary.Keys.CopyTo(keys, 0);
-            dictionary.Values.CopyTo(values, 0);
+            var keys = ListUtils.CreateListOfType(dictionaryGenerics[0]);
+            var values = ListUtils.CreateListOfType(dictionaryGenerics[1]);
 
-            WriteList(keys.ToList());
-            WriteList(values.ToList());
+            dictionary.Keys.CopyToList(keys);
+            dictionary.Values.CopyToList(values);
+
+            WriteList(keys);
+            WriteList(values);
         }
 
         public void WriteBytes (IEnumerable<byte> bytes)

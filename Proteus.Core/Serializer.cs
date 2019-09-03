@@ -65,12 +65,6 @@ namespace Proteus.Core
 
         public object Deserialize (Type type, IEnumerable<byte> data, out int bytesConsumed)
         {
-            if (!type.HasParameterlessConstructor())
-            {
-                throw LogUtils.Throw(
-                    $"{type} must have parameterless constructor in oder to be deserialized.");
-            }
-            
             var reader = new BinaryReader(data.ToList(), this);
             
             var objGenericTypeId = reader.ReadNumber();
@@ -80,8 +74,8 @@ namespace Proteus.Core
             }
             
             var members = GetObjectSerializableMembers(type);
-            var instance = Activator.CreateInstance(type);
-            
+
+            object instance = null;
             if (members.Count == 0)
             {
                 // As there is no serializable member in this type, it is either an empty class, or a native value.
@@ -92,6 +86,17 @@ namespace Proteus.Core
                 {
                     instance = instanceValue;
                 }
+            }
+
+            if (instance == null)
+            {
+                if (!type.HasParameterlessConstructor())
+                {
+                    throw LogUtils.Throw(
+                        $"{type} must have parameterless constructor in oder to be deserialized.");
+                }
+                
+                instance = Activator.CreateInstance(type);
             }
 
             foreach (var member in members)
