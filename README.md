@@ -89,7 +89,8 @@ class Vector2
 }
 
 var serializer = new Serializer();
-var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500, DeskLocation = new Vector2(50,12)};
+var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500,
+                           DeskLocation = new Vector2(50, 12)};
 var serialized = serializer.Serialize(person);
 var deserialized = serializer.Deserialize<Employee>(serialized);
 Console.WriteLine(deserialized); // Prints "20 Doe M 3500 (50, 12)".
@@ -123,7 +124,8 @@ class Employee : Person
 
 // We want to serialize then deserialize a list of Person
 var serializer = new Serializer();
-var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400}, new Person{Age = 29, Name = "John"}};
+var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400},
+                                  new Person{Age = 29, Name = "John"}};
 var serialized = serializer.Serialize(persons);
 var deserialized = serializer.Deserialize<List<Person>>(serialized);
 
@@ -134,7 +136,8 @@ foreach (var person in deserialized)
 
 // Now, if we want to be able to serialize a List of several inherited classes, we could do so:
 
-// `LoadedAssembliesGenericTypesProvider` will scans all the assemblies and tell the serializer which each Type generic ID.
+// `LoadedAssembliesGenericTypesProvider` will scans all the assemblies
+//  and tell the serializer which each Type generic ID.
 var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
 
 // We have to give a unique ID to the class Employee (here 10) with the SerializableAsGeneric attribute.
