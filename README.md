@@ -138,8 +138,8 @@ foreach (var person in deserialized)
 
 // Now, if we want to be able to serialize a List of several inherited classes, we could do so:
 
-// `LoadedAssembliesGenericTypesProvider` will scans all the assemblies
-//  and tell the serializer which each Type generic ID.
+// `LoadedAssembliesGenericTypesProvider` will scan all the assemblies
+//  and tell the serializer each Type generic ID.
 var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
 
 // We have to give a unique ID to the class Employee (here 10) with the SerializableAsGeneric attribute.
