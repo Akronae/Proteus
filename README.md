@@ -56,7 +56,8 @@ class Person
 class Employee : Person
 {
     // Note that you don't need to be aware of the last serialized member's index of the base class,
-    // they are class-specific and their absolute value don't matter, only the relative order of the indexes does.
+    // they are class-specific and their absolute value don't matter,
+    // only the relative order of the indexes does.
     [SerializedMember(0)]
     public int Wage;
     [SerializedMember(1)]
