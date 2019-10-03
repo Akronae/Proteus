@@ -95,8 +95,6 @@ namespace Proteus.Test.Serializer
             // Although this method can't 100% prove the deserialized value is equal to the original unserialized object,
             // the probability of a false positive is very low - according with the other tests -.
             var serializedDeserialized = serializer.Serialize(deserialized);
-            Console.WriteLine(BitConverter.ToString(serialized));
-            Console.WriteLine(BitConverter.ToString(serializedDeserialized));
 
             serializedDeserialized.Should().Equal(serialized);
         }

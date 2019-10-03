@@ -32,7 +32,7 @@ namespace Proteus.Core
         {
             var writer = new BinaryWriter(this);
             var objGenericTypeId = GenericTypesProvider.GetTypeId(objectType);
-            Console.WriteLine($"Write: {objGenericTypeId}");
+
             writer.WriteNumber(objGenericTypeId);
 
             if (obj == null && objectType == null)
@@ -75,7 +75,7 @@ namespace Proteus.Core
             var reader = new BinaryReader(data.ToList(), this);
 
             var objGenericTypeId = reader.ReadNumber();
-            Console.WriteLine($"Read: {objGenericTypeId}");
+
             if (objGenericTypeId != GenericTypesConsts.UndefinedTypeId)
             {
                 type = GenericTypesProvider.GetType(objGenericTypeId);

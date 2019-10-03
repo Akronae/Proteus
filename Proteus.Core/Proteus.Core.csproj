@@ -13,7 +13,7 @@
         <RepositoryUrl>https://github.com/Akronae/Proteus</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="Chresimos.Core" Version="2019.10.3.194639" />
+      <PackageReference Include="Chresimos.Core" Version="2019.10.3.211616" />
       <PackageReference Include="FluentAssertions" Version="5.9.0" />
     </ItemGroup>
 
