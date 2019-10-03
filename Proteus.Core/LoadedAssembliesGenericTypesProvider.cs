@@ -17,6 +17,8 @@ namespace Proteus.Core
 
         public int GetTypeId (Type type)
         {
+            if (type == null) return GenericTypesConsts.UndefinedTypeId;
+
             var p = _genericTypes.SingleOrDefault(pair => pair.Value == type);
 
             return p.Value is null ? GenericTypesConsts.UndefinedTypeId : p.Key;

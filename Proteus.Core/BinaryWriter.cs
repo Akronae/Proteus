@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Chresimos.Core;
 
@@ -20,9 +19,9 @@ namespace Proteus.Core
                 WriteBool(MemberIsNullFlag);
                 return true;
             }
-            
+
             WriteBool(!MemberIsNullFlag);
-            
+
             switch (value)
             {
                 case bool b:
@@ -34,6 +33,9 @@ namespace Proteus.Core
                 case short i16:
                     WriteShort(i16);
                     return true;
+                case char char16:
+                    WriteChar(char16);
+                    return true;
                 case int i32:
                     WriteNumber(i32);
                     return true;
@@ -42,6 +44,9 @@ namespace Proteus.Core
                     return true;
                 case string str:
                     WriteString(str);
+                    return true;
+                case Enum @enum:
+                    WriteEnum(@enum);
                     return true;
                 case Guid guid:
                     WriteGuid(guid);
@@ -61,7 +66,7 @@ namespace Proteus.Core
         {
             Buffer.Add(value);
         }
-        
+
         public void WriteBool (bool value)
         {
             Buffer.Add(Convert.ToByte(value));
@@ -77,12 +82,12 @@ namespace Proteus.Core
             Buffer.AddRange(BitConverter.GetBytes(value));
         }
 
-        public void WriteInt32 (int value)
+        public void WriteChar (char value)
         {
             Buffer.AddRange(BitConverter.GetBytes(value));
         }
 
-        public void WriteInt32 (uint value)
+        public void WriteInt32 (int value)
         {
             Buffer.AddRange(BitConverter.GetBytes(value));
         }
@@ -98,6 +103,11 @@ namespace Proteus.Core
             Buffer.AddRange(Encoding.UTF8.GetBytes(value));
         }
 
+        public void WriteEnum (Enum value)
+        {
+            WriteNumber((int) (object) value);
+        }
+
         public void WriteList (IList list)
         {
             var listElementType = list.GetListElementTypeOrDefault();
@@ -110,7 +120,7 @@ namespace Proteus.Core
 
             foreach (var obj in list)
             {
-                var objSerializationType = obj.GetType();
+                var objSerializationType = obj?.GetType();
                 var objGenericTypeId = Serializer.GenericTypesProvider.GetTypeId(objSerializationType);
 
                 // If the type of this element has a unique ID, we can serialize it as it is because the type will later
@@ -119,7 +129,7 @@ namespace Proteus.Core
                 {
                     objSerializationType = listElementType;
                 }
-                
+
                 WriteBytes(Serializer.Serialize(obj, objSerializationType));
             }
         }
@@ -179,26 +189,27 @@ namespace Proteus.Core
 
         public void WriteNumber (float value)
         {
-            var multipliedBy10 = value * 10;
-            var multipliedBy100 = value * 100;
-
             if (value == (int) value)
             {
                 WriteNumber((int) value);
 
                 return;
             }
-            
+
+            var multipliedBy10 = value * 10;
+            var multipliedBy100 = value * 100;
+
             if (multipliedBy10 == (int) multipliedBy10)
             {
-                if (multipliedBy10 > byte.MinValue && multipliedBy10 < byte.MaxValue)
+                if (multipliedBy10 >= byte.MinValue && multipliedBy10 <= byte.MaxValue)
                 {
                     WriteByte((byte) NumberType.FloatMultipliedToByteBy10);
                     WriteByte((byte) multipliedBy10);
 
                     return;
                 }
-                else if (multipliedBy10 > sbyte.MinValue && multipliedBy10 < sbyte.MaxValue)
+
+                if (multipliedBy10 >= sbyte.MinValue && multipliedBy10 <= sbyte.MaxValue)
                 {
                     WriteByte((byte) NumberType.FloatMultipliedToSByteBy10);
                     WriteByte((byte) Convert.ToSByte(multipliedBy10));
@@ -206,13 +217,24 @@ namespace Proteus.Core
                     return;
                 }
             }
-            
-            if (multipliedBy100 < short.MaxValue && multipliedBy100 == (int) multipliedBy100)
-            {
-                WriteByte((byte) NumberType.FloatMultipliedToShortBy100);
-                WriteShort((short) multipliedBy100);
 
-                return;
+            if (multipliedBy100 == (int) multipliedBy100)
+            {
+                if (multipliedBy100 >= short.MinValue && multipliedBy100 <= short.MaxValue)
+                {
+                    WriteByte((byte) NumberType.FloatMultipliedToShortBy100);
+                    WriteShort((short) multipliedBy100);
+
+                    return;
+                }
+
+                if (multipliedBy100 >= ushort.MinValue && multipliedBy100 <= ushort.MinValue)
+                {
+                    WriteByte((byte) NumberType.FloatMultipliedToShortBy100);
+                    WriteShort((short) multipliedBy100);
+
+                    return;
+                }
             }
 
             WriteByte((byte) NumberType.Float);

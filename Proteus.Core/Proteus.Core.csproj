@@ -12,6 +12,10 @@
         <PackageIconUrl>https://camo.githubusercontent.com/2f6f73d61eee9880252f0b5605558031439b61b7/687474703a2f2f312e62702e626c6f6773706f742e636f6d2f5f6467305972417a796b59592f545178663330656e6443492f41414141414141414141772f77646b30716c376731716f2f73313630302f702e6a706567</PackageIconUrl>
         <RepositoryUrl>https://github.com/Akronae/Proteus</RepositoryUrl>
     </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Chresimos.Core" Version="2019.10.3.194639" />
+      <PackageReference Include="FluentAssertions" Version="5.9.0" />
+    </ItemGroup>
 
     <!-- Automatic date versioned packaging -->
     <Target Name="NugetPackAutoVersioning" AfterTargets="Build">
@@ -19,8 +23,5 @@
     </Target>
     
     <!-- Third party libraries -->
-    <ItemGroup>
-        <PackageReference Include="Chresimos.Core" Version="2019.8.16.115000" />
-    </ItemGroup>
     
 </Project>

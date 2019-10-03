@@ -19,45 +19,52 @@ namespace Proteus.Core
             {
                 genericTypesProvider = new VoidGenericTypesProvider();
             }
+
             GenericTypesProvider = genericTypesProvider;
         }
 
         public byte[] Serialize (object obj)
         {
-            return Serialize(obj, obj.GetType());
+            return Serialize(obj, obj?.GetType());
         }
 
         public byte[] Serialize (object obj, Type objectType)
         {
-            var members = GetObjectSerializableMembers(objectType);
             var writer = new BinaryWriter(this);
-
             var objGenericTypeId = GenericTypesProvider.GetTypeId(objectType);
+            Console.WriteLine($"Write: {objGenericTypeId}");
             writer.WriteNumber(objGenericTypeId);
-            
-            if (members.Count == 0)
+
+            if (obj == null && objectType == null)
             {
                 writer.Write(obj);
             }
-            
-            foreach (var member in members)
+            else
             {
-                var value = member.Value.GetValue(obj);
+                var members = GetObjectSerializableMembers(objectType);
 
-                if (value is Enum) value = (short) (int) value;
+                if (members.Count == 0)
+                {
+                    writer.Write(obj);
+                }
 
-                // If value is not primitive type.
-                if (writer.Write(value) == false)
-                {   
-                    var serializedObj = Serialize(value);
+                foreach (var member in members)
+                {
+                    var value = member.Value.GetValue(obj);
 
-                    if (serializedObj.Length == 0)
+                    // If value is not primitive type.
+                    if (writer.Write(value) == false)
                     {
-                        throw LogUtils.Throw($"Cannot write type {value.GetType().FullName}");
+                        var serializedObj = Serialize(value);
+
+                        if (serializedObj.Length == 0)
+                        {
+                            throw LogUtils.Throw($"Cannot write type {value.GetType().FullName}");
+                        }
+
+                        writer.WriteBytes(serializedObj);
                     }
-                    
-                    writer.WriteBytes(serializedObj);
-                }    
+                }
             }
 
             return writer.Buffer.ToArray();
@@ -66,13 +73,14 @@ namespace Proteus.Core
         public object Deserialize (Type type, IEnumerable<byte> data, out int bytesConsumed)
         {
             var reader = new BinaryReader(data.ToList(), this);
-            
+
             var objGenericTypeId = reader.ReadNumber();
+            Console.WriteLine($"Read: {objGenericTypeId}");
             if (objGenericTypeId != GenericTypesConsts.UndefinedTypeId)
             {
                 type = GenericTypesProvider.GetType(objGenericTypeId);
             }
-            
+
             var members = GetObjectSerializableMembers(type);
 
             object instance = null;
@@ -88,14 +96,14 @@ namespace Proteus.Core
                 }
             }
 
-            if (instance == null)
+            if (instance == null && type != typeof(string))
             {
                 if (!type.HasParameterlessConstructor())
                 {
                     throw LogUtils.Throw(
                         $"{type} must have parameterless constructor in oder to be deserialized.");
                 }
-                
+
                 instance = Activator.CreateInstance(type);
             }
 
@@ -105,7 +113,7 @@ namespace Proteus.Core
                 var value = reader.Read(memType);
 
                 if (value is BinarySerializer.CannotRead)
-                {   
+                {
                     value = Deserialize(memType, reader.RemainingBuffer.ToArray(), out var c);
                     reader.Index += c;
 
@@ -137,7 +145,7 @@ namespace Proteus.Core
         {
             return Deserialize<T>(data, out _);
         }
-        
+
         public Dictionary<int, MemberInfo> GetObjectSerializableMembers (Type packetType)
         {
             var isCached = _cachedPacketSerializableMembers.ContainsKey(packetType);
@@ -162,7 +170,7 @@ namespace Proteus.Core
                             LogUtils.Throw(new Exception(
                                 $"{members[memberId]} and {pair.Value} have the same ID = {memberId} in packet {packetType}"));
                         }
-                        
+
                         members.Add(memberId, pair.Value);
                     }
                 }
@@ -182,7 +190,9 @@ namespace Proteus.Core
                 var attr = property.GetCustomAttributes(typeof(SerializedMemberAttribute), false).SingleOrDefault();
 
                 if (attr is SerializedMemberAttribute sma)
+                {
                     values.Add(new KeyValuePair<int, MemberInfo>(sma.Index, property));
+                }
             }
 
             foreach (var field in type.GetFields())
@@ -190,7 +200,9 @@ namespace Proteus.Core
                 var attr = field.GetCustomAttributes(typeof(SerializedMemberAttribute), false).SingleOrDefault();
 
                 if (attr is SerializedMemberAttribute sma)
+                {
                     values.Add(new KeyValuePair<int, MemberInfo>(sma.Index, field));
+                }
             }
 
             return values;

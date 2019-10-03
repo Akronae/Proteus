@@ -21,10 +21,9 @@ namespace Proteus.Core
             Buffer = buffer;
             Serializer = serializer;
         }
-        
+
         public struct CannotRead
         {
-            
         }
     }
 }

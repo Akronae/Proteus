@@ -20,28 +20,56 @@ namespace Proteus.Core
             {
                 return null;
             }
-            
-            object value;
 
-            if (type == typeof(bool)) 
+            object value;
+            if (type == typeof(bool))
+            {
                 value = ReadBool();
+            }
             else if (type == typeof(byte))
+            {
                 value = ReadByte();
+            }
+            else if (type == typeof(short))
+            {
+                value = ReadShort();
+            }
+            else if (type == typeof(char))
+            {
+                value = ReadChar();
+            }
             else if (type == typeof(int))
+            {
                 value = ReadNumber();
+            }
             else if (type == typeof(float))
+            {
                 value = ReadFloatNumber();
+            }
             else if (type == typeof(string))
+            {
                 value = ReadString();
+            }
             else if (type.IsSubclassOf(typeof(Enum)))
+            {
                 value = ReadEnum(type);
+            }
             else if (type == typeof(Guid))
+            {
                 value = ReadGuid();
-            else if (type.GetInterfaces().Contains(typeof(IList)))
+            }
+            else if (type.IsIListType())
+            {
                 value = ReadList(type);
-            else if (type.GetInterfaces().Contains(typeof(IDictionary)))
+            }
+            else if (type.IsIDictionaryType())
+            {
                 value = ReadDictionary(type);
-            else value = null;
+            }
+            else
+            {
+                value = null;
+            }
 
             return value ?? CannotReadValue;
         }
@@ -53,7 +81,7 @@ namespace Proteus.Core
 
             return value;
         }
-        
+
         public bool ReadBool ()
         {
             return Convert.ToBoolean(ReadByte());
@@ -62,6 +90,14 @@ namespace Proteus.Core
         public short ReadShort ()
         {
             var value = BitConverter.ToInt16(Buffer.ToArray(), Index);
+            Index += sizeof(short);
+
+            return value;
+        }
+
+        public char ReadChar ()
+        {
+            var value = BitConverter.ToChar(Buffer.ToArray(), Index);
             Index += sizeof(short);
 
             return value;
@@ -116,9 +152,9 @@ namespace Proteus.Core
             return value;
         }
 
-        public object ReadEnum (Type type)
+        public object ReadEnum (Type enumType)
         {
-            return Enum.ToObject(type, ReadShort());
+            return Enum.ToObject(enumType, ReadNumber());
         }
 
         public Guid ReadGuid ()
@@ -133,6 +169,12 @@ namespace Proteus.Core
         {
             var count = ReadNumber();
             var listGenericType = listType.GetGenericArguments().Single();
+
+            if (listGenericType == typeof(object))
+            {
+                throw LogUtils.Throw("Cannot read a List<object>");
+            }
+
             var list = ListUtils.CreateListOfType(listGenericType);
 
             for (var i = 0; i < count; i++)

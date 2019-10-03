@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Alex\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Alex\.Rider2019.1\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Alex\.Rider2019.1\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\Alex\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Alex\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Proteus.-1445303663.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Alex\Prog\C#\Proteus" t="IncludeFlat">
+    <e p="C:\Users\Alexandre\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Alexandre\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Alexandre\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Alexandre\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Alexandre\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Alexandre\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Alexandre\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Proteus.202123611.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alexandre\Documents\Prog\Proteus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Proteus.Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -30,6 +32,27 @@
         <e p="VoidGenericTypesProvider.cs" t="Include" />
       </e>
       <e p="Proteus.sln" t="IncludeFlat" />
+      <e p="Proteus.Test" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="Proteus.Test.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Proteus.Test.csproj" t="IncludeRecursive" />
+        <e p="Serializer" t="Include">
+          <e p="Boolean.cs" t="Include" />
+          <e p="Collection.cs" t="Include" />
+          <e p="ComplexObject.cs" t="Include" />
+          <e p="Enumeration.cs" t="Include" />
+          <e p="Generic.cs" t="Include" />
+          <e p="Literal.cs" t="Include" />
+          <e p="Numeric.cs" t="Include" />
+        </e>
+      </e>
     </e>
   </component>
 </project>

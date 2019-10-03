@@ -12,7 +12,7 @@ namespace Proteus.Core
 
         public Type GetType (int id)
         {
-            throw LogUtils.Throw($"As no generic types provider has been given, can not retrieve type " +
+            throw LogUtils.Throw("As no generic types provider has been given, can not retrieve type " +
                                  $"associated with id {id}");
         }
     }
