@@ -77,7 +77,7 @@ class Vector2
         Y = y;
     }
     
-    // When a class has a constructor it must also have a parameterless constructor as serialization
+    // When a class has a constructor it must also have a parameterless constructor as the serializer
     // uses parameterless constructor to create instances.
     public Vector2 ()
     {
@@ -94,6 +94,7 @@ var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500,
                            DeskLocation = new Vector2(50, 12)};
 var serialized = serializer.Serialize(person);
 var deserialized = serializer.Deserialize<Employee>(serialized);
+
 Console.WriteLine(deserialized); // Prints "20 Doe M 3500 (50, 12)".
 ```
 
