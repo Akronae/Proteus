@@ -170,6 +170,8 @@ the serializer to retrieve the class structure during deserialization.**
 Here are the supported native types:  
 * Boolean
 * Byte
+* Int16 (short)
+* Char
 * Int32 (int)
 * Single (float)
 * String
