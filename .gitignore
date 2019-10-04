@@ -557,3 +557,4 @@ fabric.properties
 # End of https://www.gitignore.io/api/rider,csharp,visualstudio,visualstudiocode
 
 !nuget/*.nupkg
+/.idea/

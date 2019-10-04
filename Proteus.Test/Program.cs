@@ -1,4 +1,7 @@
-﻿using Proteus.Test.Serializer;
+﻿using System;
+using System.Collections.Generic;
+using Proteus.Core;
+using Proteus.Test.Serializer;
 
 namespace Proteus.Test
 {
@@ -6,7 +9,14 @@ namespace Proteus.Test
     {
         private static void Main (string[] args)
         {
-            new ComplexObject().ThreeLevelObject();
+            var valueToSerialize = (ushort) 12;
+            var serializer = new Core.Serializer();
+            var serialized = serializer.Serialize(valueToSerialize);
+            var deserialized = serializer.Deserialize<ushort>(serialized);
+
+            Console.WriteLine(deserialized);
+
+            //new ComplexObject().ThreeLevelObject();
         }
     }
 }

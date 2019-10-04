@@ -38,6 +38,23 @@ namespace Proteus.Test.Serializer
 
             deserialized.Should().Be(value);
         }
+        
+        [Theory]
+        [InlineData(ushort.MaxValue)]
+        [InlineData(ushort.MinValue)]
+        [InlineData(1)]
+        [InlineData(23)]
+        [InlineData(856)]
+        [InlineData(5423)]
+        [InlineData(21321)]
+        public void UShort (ushort value)
+        {
+            var serializer = new Core.Serializer();
+            var serialized = serializer.Serialize(value);
+            var deserialized = serializer.Deserialize<ushort>(serialized);
+
+            deserialized.Should().Be(value);
+        }
 
         [Theory]
         [InlineData(int.MaxValue)]

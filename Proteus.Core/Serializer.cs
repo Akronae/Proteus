@@ -25,10 +25,10 @@ namespace Proteus.Core
 
         public byte[] Serialize (object obj)
         {
-            return Serialize(obj, obj?.GetType());
+            return Serialize(obj, obj?.GetType(), out _);
         }
 
-        public byte[] Serialize (object obj, Type objectType)
+        public byte[] Serialize (object obj, Type objectType, out int serializedLength)
         {
             var writer = new BinaryWriter(this);
             var objGenericTypeId = GenericTypesProvider.GetTypeId(objectType);
@@ -55,24 +55,25 @@ namespace Proteus.Core
                     // If value is not primitive type.
                     if (writer.Write(value) == false)
                     {
-                        var serializedObj = Serialize(value);
+                        var serializedObj = Serialize(value, value.GetType(), out var serializedObjLength);
 
-                        if (serializedObj.Length == 0)
+                        if (serializedObjLength == 0)
                         {
                             throw LogUtils.Throw($"Cannot write type {value.GetType().FullName}");
                         }
 
-                        writer.WriteBytes(serializedObj);
+                        writer.WriteBytes(serializedObj, serializedObjLength);
                     }
                 }
             }
 
-            return writer.Buffer.ToArray();
+            serializedLength = writer.BufferIndex;
+            return writer.Buffer;
         }
 
-        public object Deserialize (Type type, IEnumerable<byte> data, out int bytesConsumed)
+        public object Deserialize (Type type, byte[] data, out int bytesConsumed)
         {
-            var reader = new BinaryReader(data.ToList(), this);
+            var reader = new BinaryReader(data, this);
 
             var objGenericTypeId = reader.ReadNumber();
 
@@ -114,8 +115,8 @@ namespace Proteus.Core
 
                 if (value is BinarySerializer.CannotRead)
                 {
-                    value = Deserialize(memType, reader.RemainingBuffer.ToArray(), out var c);
-                    reader.Index += c;
+                    value = Deserialize(memType, reader.RemainingBuffer, out var c);
+                    reader.BufferIndex += c;
 
                     if (value == null)
                     {
@@ -126,7 +127,7 @@ namespace Proteus.Core
                 member.Value.SetValue(instance, value);
             }
 
-            bytesConsumed = reader.Index;
+            bytesConsumed = reader.BufferIndex;
 
             return instance;
         }

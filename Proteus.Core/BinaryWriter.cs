@@ -8,7 +8,7 @@ namespace Proteus.Core
 {
     public sealed class BinaryWriter : BinarySerializer
     {
-        public BinaryWriter (Serializer serializer) : base(new List<byte>(), serializer)
+        public BinaryWriter (Serializer serializer) : base(serializer)
         {
         }
 
@@ -32,6 +32,9 @@ namespace Proteus.Core
                     return true;
                 case short i16:
                     WriteShort(i16);
+                    return true;
+                case ushort ui16:
+                    WriteUShort(ui16);
                     return true;
                 case char char16:
                     WriteChar(char16);
@@ -64,43 +67,47 @@ namespace Proteus.Core
 
         public void WriteByte (byte value)
         {
-            Buffer.Add(value);
+            AppendToBuffer(value);
         }
 
         public void WriteBool (bool value)
         {
-            Buffer.Add(Convert.ToByte(value));
+            AppendToBuffer(value ? (byte) 1 : (byte) 0);
         }
 
         public void WriteShort (short value)
         {
-            Buffer.AddRange(BitConverter.GetBytes(value));
+            AppendToBuffer((byte) (value & 255));
+            AppendToBuffer((byte) (value >> 8));
         }
 
-        public void WriteShort (ushort value)
+        public void WriteUShort (ushort value)
         {
-            Buffer.AddRange(BitConverter.GetBytes(value));
+            WriteShort((short) value);
         }
 
         public void WriteChar (char value)
         {
-            Buffer.AddRange(BitConverter.GetBytes(value));
+           WriteUShort(value);
         }
 
         public void WriteInt32 (int value)
         {
-            Buffer.AddRange(BitConverter.GetBytes(value));
+            AppendToBuffer((byte) value);
+            AppendToBuffer((byte) (value >> 8));
+            AppendToBuffer((byte) (value >> 16));
+            AppendToBuffer((byte) (value >> 24));
         }
 
         public void WriteFloat (float value)
         {
-            Buffer.AddRange(BitConverter.GetBytes(value));
+            AppendToBuffer(BitConverter.GetBytes(value));
         }
 
         public void WriteString (string value)
         {
-            WriteInt32(Encoding.UTF8.GetByteCount(value));
-            Buffer.AddRange(Encoding.UTF8.GetBytes(value));
+            WriteNumber(Encoding.UTF8.GetByteCount(value));
+            AppendToBuffer(Encoding.UTF8.GetBytes(value));
         }
 
         public void WriteEnum (Enum value)
@@ -130,7 +137,8 @@ namespace Proteus.Core
                     objSerializationType = listElementType;
                 }
 
-                WriteBytes(Serializer.Serialize(obj, objSerializationType));
+                var serialized = Serializer.Serialize(obj, objSerializationType, out var serializedLength);
+                WriteBytes(serialized, serializedLength);
             }
         }
 
@@ -148,9 +156,14 @@ namespace Proteus.Core
             WriteList(values);
         }
 
-        public void WriteBytes (IEnumerable<byte> bytes)
+        public void WriteBytes (byte[] bytes)
         {
-            Buffer.AddRange(bytes);
+            AppendToBuffer(bytes, bytes.Length);
+        }
+        
+        public void WriteBytes (byte[] bytes, int length)
+        {
+            AppendToBuffer(bytes, length);
         }
 
         public void WriteGuid (Guid guid)
@@ -173,7 +186,7 @@ namespace Proteus.Core
             else if (value <= ushort.MaxValue && value >= ushort.MinValue)
             {
                 WriteByte((byte) NumberType.UShort);
-                WriteShort((ushort) value);
+                WriteUShort((ushort) value);
             }
             else if (value <= short.MaxValue && value >= short.MinValue)
             {

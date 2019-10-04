@@ -9,10 +9,9 @@ namespace Proteus.Core
 {
     public sealed class BinaryReader : BinarySerializer
     {
-        public BinaryReader (List<byte> buffer, Serializer serializer) : base(buffer, serializer)
+        public BinaryReader (byte[] buffer, Serializer serializer) : base(buffer, serializer)
         {
         }
-
 
         public object Read (Type type)
         {
@@ -33,6 +32,10 @@ namespace Proteus.Core
             else if (type == typeof(short))
             {
                 value = ReadShort();
+            }
+            else if (type == typeof(ushort))
+            {
+                value = ReadUShort();
             }
             else if (type == typeof(char))
             {
@@ -76,10 +79,7 @@ namespace Proteus.Core
 
         public byte ReadByte ()
         {
-            var value = Buffer[Index];
-            Index += sizeof(byte);
-
-            return value;
+            return ReadBuffer();
         }
 
         public bool ReadBool ()
@@ -89,65 +89,45 @@ namespace Proteus.Core
 
         public short ReadShort ()
         {
-            var value = BitConverter.ToInt16(Buffer.ToArray(), Index);
-            Index += sizeof(short);
-
-            return value;
+            return (short) (ReadByte() + (ReadByte() << 8));
+        }
+        
+        public ushort ReadUShort ()
+        {
+            return (ushort) ReadShort();
         }
 
         public char ReadChar ()
         {
-            var value = BitConverter.ToChar(Buffer.ToArray(), Index);
-            Index += sizeof(short);
-
-            return value;
-        }
-
-        public ushort ReadUShort ()
-        {
-            var value = BitConverter.ToUInt16(Buffer.ToArray(), Index);
-            Index += sizeof(short);
-
-            return value;
+            return (char) ReadUShort();
         }
 
         public int ReadInt32 ()
         {
-            var value = BitConverter.ToInt32(Buffer.ToArray(), Index);
-            Index += sizeof(int);
-
-            return value;
-        }
-
-        public uint ReadUInt32 ()
-        {
-            var value = BitConverter.ToUInt32(Buffer.ToArray(), Index);
-            Index += sizeof(int);
-
-            return value;
+            return ReadByte() + (ReadByte() << 8) + (ReadByte() << 16) + (ReadByte() << 24);
         }
 
         public float ReadFloat ()
         {
-            var value = BitConverter.ToSingle(Buffer.ToArray(), Index);
-            Index += sizeof(float);
+            var value = BitConverter.ToSingle(Buffer, BufferIndex);
+            BufferIndex += sizeof(float);
 
             return value;
         }
 
         public byte[] ReadBytes (int len)
         {
-            var bytes = Buffer.GetRange(Index, len);
-            Index += len;
+            var bytes = Buffer.GetRange(BufferIndex, len);
+            BufferIndex += sizeof(byte) * len;
 
-            return bytes.ToArray();
+            return bytes;
         }
 
         public string ReadString ()
         {
-            var len = ReadInt32();
-            var value = Encoding.UTF8.GetString(Buffer.ToArray(), Index, len);
-            Index += len;
+            var len = ReadNumber();
+            var value = Encoding.UTF8.GetString(Buffer, BufferIndex, len);
+            BufferIndex += len;
 
             return value;
         }
@@ -159,7 +139,7 @@ namespace Proteus.Core
 
         public Guid ReadGuid ()
         {
-            const int len = 16;
+            const int len = sizeof(byte) * 16;
             var guid = new Guid(ReadBytes(len));
 
             return guid;
@@ -179,8 +159,8 @@ namespace Proteus.Core
 
             for (var i = 0; i < count; i++)
             {
-                list.Add(Serializer.Deserialize(listGenericType, RemainingBuffer.ToArray(), out var consumed));
-                Index += consumed;
+                list.Add(Serializer.Deserialize(listGenericType, RemainingBuffer, out var consumed));
+                BufferIndex += consumed;
             }
 
             return list;
