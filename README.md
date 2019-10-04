@@ -56,7 +56,8 @@ class Person
 class Employee : Person
 {
     // Note that you don't need to be aware of the last serialized member's index of the base class,
-    // they are class-specific and their absolute value don't matter, only the relative order of the indexes does.
+    // they are class-specific and their absolute value don't matter,
+    // only the relative order of the indexes does.
     [SerializedMember(0)]
     public int Wage;
     [SerializedMember(1)]
@@ -76,7 +77,7 @@ class Vector2
         Y = y;
     }
     
-    // When a class has a constructor it must also have a parameterless constructor as serialization
+    // When a class has a constructor it must also have a parameterless constructor as the serializer
     // uses parameterless constructor to create instances.
     public Vector2 ()
     {
@@ -89,9 +90,11 @@ class Vector2
 }
 
 var serializer = new Serializer();
-var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500, DeskLocation = new Vector2(50,12)};
+var person = new Employee {Age = 20, Female = false, Name = "Doe", Wage = 3500,
+                           DeskLocation = new Vector2(50, 12)};
 var serialized = serializer.Serialize(person);
 var deserialized = serializer.Deserialize<Employee>(serialized);
+
 Console.WriteLine(deserialized); // Prints "20 Doe M 3500 (50, 12)".
 ```
 
@@ -123,7 +126,8 @@ class Employee : Person
 
 // We want to serialize then deserialize a list of Person
 var serializer = new Serializer();
-var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400}, new Person{Age = 29, Name = "John"}};
+var persons = new List<Person>() {new Employee {Age = 21, Name = "Doe", Wage = 3400},
+                                  new Person{Age = 29, Name = "John"}};
 var serialized = serializer.Serialize(persons);
 var deserialized = serializer.Deserialize<List<Person>>(serialized);
 
@@ -134,7 +138,8 @@ foreach (var person in deserialized)
 
 // Now, if we want to be able to serialize a List of several inherited classes, we could do so:
 
-// `LoadedAssembliesGenericTypesProvider` will scans all the assemblies and tell the serializer which each Type generic ID.
+// `LoadedAssembliesGenericTypesProvider` will scan all the assemblies
+//  and tell the serializer each Type generic ID.
 var serializer = new Serializer(new LoadedAssembliesGenericTypesProvider());
 
 // We have to give a unique ID to the class Employee (here 10) with the SerializableAsGeneric attribute.
@@ -165,6 +170,8 @@ the serializer to retrieve the class structure during deserialization.**
 Here are the supported native types:  
 * Boolean
 * Byte
+* Int16 (short)
+* Char
 * Int32 (int)
 * Single (float)
 * String
