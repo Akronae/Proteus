@@ -16,4 +16,11 @@
       <ProjectReference Include="..\Proteus.Core\Proteus.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Reference Include="Chresimos.Core">
+            <HintPath>..\..\Chresimos\Chresimos.Core\bin\Debug\netstandard2.0\Chresimos.Core.dll</HintPath>
+            <SpecificVersion>false</SpecificVersion>
+            <PrivateAssets>all</PrivateAssets>
+        </Reference>
+    </ItemGroup>
 </Project>

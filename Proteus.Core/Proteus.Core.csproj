@@ -13,7 +13,6 @@
         <RepositoryUrl>https://github.com/Akronae/Proteus</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="Chresimos.Core" Version="2019.10.4.154236" />
       <PackageReference Include="FluentAssertions" Version="5.9.0" />
     </ItemGroup>
 
@@ -23,5 +22,11 @@
     </Target>
     
     <!-- Third party libraries -->
-    
+    <ItemGroup>
+        <Reference Include="Chresimos.Core">
+            <HintPath>..\..\Chresimos\Chresimos.Core\bin\Debug\netstandard2.0\Chresimos.Core.dll</HintPath>
+            <SpecificVersion>false</SpecificVersion>
+            <PrivateAssets>all</PrivateAssets>
+        </Reference>
+    </ItemGroup>
 </Project>

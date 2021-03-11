@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Chresimos.Core;
+using Chresimos.Core.Utils;
 
 namespace Proteus.Core
 {

@@ -1,5 +1,5 @@
 using System;
-using Chresimos.Core;
+using Chresimos.Core.Utils;
 
 namespace Proteus.Core
 {

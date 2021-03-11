@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Chresimos.Core;
+using Chresimos.Core.Utils;
 using Xunit;
 
 namespace Proteus.Test.Serializer

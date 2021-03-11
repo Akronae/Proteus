@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Chresimos.Core;
+using Chresimos.Core.Utils;
 
 namespace Proteus.Core
 {
@@ -68,7 +68,7 @@ namespace Proteus.Core
             }
 
             serializedLength = writer.BufferIndex;
-            return writer.Buffer;
+            return writer.UsedBuffer;
         }
 
         public object Deserialize (Type type, byte[] data, out int bytesConsumed)

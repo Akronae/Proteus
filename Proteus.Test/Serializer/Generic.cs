@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Chresimos.Core;
+using Chresimos.Core.Utils;
 using FluentAssertions;
 using Proteus.Core;
 using Xunit;
